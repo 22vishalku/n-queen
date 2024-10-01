@@ -96,3 +96,107 @@ button:hover {
 .cell.queen {
   color: #dc3545; /* Red */
 }
+.navbar {
+    background-color: #ffccdd; /* Light pink */
+    height: 120px; /* Increase height for broader navbar */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center; /* Center the navbar content */
+    align-items: center;
+    padding: 0 20px;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar logo centered */
+.navbar-logo {
+    color: #f54303; /* Red color for the queen sign */
+    font-size: 40px; /* Larger text */
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo i {
+    margin-right: 10px;
+    font-size: 36px; /* Larger crown icon */
+}
+
+/* Hide the menu icon in the center, but still available for responsive */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+/* Navbar menu */
+.nav-menu {
+    display: none; /* Initially hidden (visible on mobile view) */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* For larger screens */
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links:hover {
+    background-color: #ff6b81; /* Pink on hover */
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffccdd;
+        position: absolute;
+        top: 100px; /* Align the dropdown below the broader navbar */
+        left: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links {
+        padding: 20px;
+        width: 100%;
+        display: block;
+    }
+}
+
+body {
+    padding-top: 120px; /* Space for the fixed navbar */
+}
